@@ -173,8 +173,8 @@ ul, ol { list-style: none; }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(13, 42, 74, 0.58) 0%, rgba(13, 42, 74, 0.34) 36%, rgba(13, 42, 74, 0.04) 66%, rgba(13, 42, 74, 0) 100%),
-    linear-gradient(0deg, rgba(13, 42, 74, 0.28) 0%, rgba(13, 42, 74, 0) 28%);
+    linear-gradient(90deg, rgba(13, 42, 74, 0.34) 0%, rgba(13, 42, 74, 0.18) 40%, rgba(13, 42, 74, 0.02) 70%, rgba(13, 42, 74, 0) 100%),
+    linear-gradient(0deg, rgba(13, 42, 74, 0.20) 0%, rgba(13, 42, 74, 0) 26%);
 }
 .hero-accent-orb { display: none; }
 .hero-inner { position: relative; z-index: 2; }
@@ -195,7 +195,7 @@ ul, ol { list-style: none; }
 }
 .hero .hero-title {
   color: #ffffff;
-  text-shadow: 0 2px 28px rgba(13, 42, 74, 0.45);
+  text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
 }
 .hero-title .accent {
   background: linear-gradient(92deg, #4da3ff 0%, #7fe3ff 100%);
@@ -205,8 +205,8 @@ ul, ol { list-style: none; }
   color: transparent;
 }
 .hero .hero-lead {
-  color: rgba(255, 255, 255, 0.94);
-  text-shadow: 0 1px 18px rgba(13, 42, 74, 0.5);
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 12px rgba(13, 42, 74, 0.65), 0 1px 2px rgba(13, 42, 74, 0.5);
 }
 .hero .btn-outline {
   color: #fff;
