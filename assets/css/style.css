@@ -843,7 +843,7 @@ select.form-control { appearance: none; cursor: pointer; }
   .nav-toggle.is-open span { background: #fff; }
 
   .service-grid, .works-grid { grid-template-columns: 1fr; }
-  .hero { min-height: 78vh; }
+  .hero { min-height: 78vh; padding-top: calc(var(--header-h) + 40px); padding-bottom: 48px; }
   .hero-inner { padding-left: 5%; padding-right: 5%; }
   /* モバイルは縦長になるため全面をやや強めにオーバーレイ */
   .hero-grid-bg {
