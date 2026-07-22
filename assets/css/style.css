@@ -145,9 +145,9 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(180deg, #8cc3f5 0%, #aed4f7 45%, #cfe6fb 100%);
+  background: #0f1c2e;
 }
-/* ビル群イラスト（メインビジュアル背景・全面） */
+/* 都市写真（メインビジュアル背景・全面） */
 .hero-skyline {
   position: absolute;
   inset: 0;
@@ -158,18 +158,57 @@ ul, ol { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: bottom center;
+  object-position: center bottom;
   display: block;
+  animation: heroZoom 18s ease-out both;
 }
-/* 左側のテキスト可読性を上げる淡いベール */
+@keyframes heroZoom {
+  from { transform: scale(1.08); }
+  to { transform: scale(1); }
+}
+/* テキスト可読性のための濃紺オーバーレイ（左→右） */
 .hero-grid-bg {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(90deg, rgba(207, 230, 251, 0.72) 0%, rgba(207, 230, 251, 0.35) 38%, rgba(207, 230, 251, 0) 62%);
+  background:
+    linear-gradient(90deg, rgba(15, 28, 46, 0.82) 0%, rgba(15, 28, 46, 0.55) 36%, rgba(15, 28, 46, 0.08) 68%, rgba(15, 28, 46, 0) 100%),
+    linear-gradient(0deg, rgba(15, 28, 46, 0.45) 0%, rgba(15, 28, 46, 0) 30%);
 }
 .hero-accent-orb { display: none; }
 .hero-inner { position: relative; z-index: 2; }
+.hero .hero-label { color: #7fd4ff; }
+.hero .hero-label::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 2px;
+  margin-top: 14px;
+  background: linear-gradient(90deg, #0e6fff, #7fd4ff);
+  transform-origin: left;
+  animation: lineGrow 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+@keyframes lineGrow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.hero .hero-title { color: #ffffff; }
+.hero-title .accent {
+  background: linear-gradient(92deg, #4da3ff 0%, #7fe3ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+.hero .hero-lead { color: rgba(255, 255, 255, 0.88); }
+.hero .btn-outline {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  background: rgba(255, 255, 255, 0.08);
+}
+.hero .btn-outline:hover { background: #fff; color: var(--color-ink); border-color: #fff; }
 .hero-label {
   font-family: var(--font-en);
   font-size: 13px;
@@ -264,6 +303,10 @@ ul, ol { list-style: none; }
   text-transform: uppercase;
   display: block;
   margin-bottom: 12px;
+  background: linear-gradient(92deg, var(--color-accent) 0%, #38b6ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .section-title {
   font-size: clamp(26px, 3.4vw, 38px);
@@ -323,7 +366,7 @@ ul, ol { list-style: none; }
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 3px;
-  background: var(--color-accent);
+  background: linear-gradient(90deg, var(--color-accent), #38b6ff);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.35s;
@@ -414,7 +457,12 @@ ul, ol { list-style: none; }
   top: -160px; right: -100px;
 }
 .cta-inner { position: relative; text-align: center; }
-.cta-inner .section-label { color: #7fb0ff; }
+.cta-inner .section-label {
+  background: linear-gradient(92deg, #7fb0ff 0%, #7fe3ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .cta-inner h2 {
   font-size: clamp(24px, 3.2vw, 36px);
   font-weight: 700;
@@ -772,9 +820,10 @@ select.form-control { appearance: none; cursor: pointer; }
 
   .service-grid, .works-grid { grid-template-columns: 1fr; }
   .hero { min-height: 78vh; }
-  /* モバイルは縦長になるためテキスト背後をやや強めにベール */
+  /* モバイルは縦長になるため全面をやや強めにオーバーレイ */
   .hero-grid-bg {
-    background: linear-gradient(180deg, rgba(207, 230, 251, 0.82) 0%, rgba(207, 230, 251, 0.5) 45%, rgba(207, 230, 251, 0) 80%);
+    background:
+      linear-gradient(180deg, rgba(15, 28, 46, 0.72) 0%, rgba(15, 28, 46, 0.55) 55%, rgba(15, 28, 46, 0.35) 100%);
   }
   .company-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
   .company-table td { display: block; padding-top: 0; }
