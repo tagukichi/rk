@@ -210,21 +210,31 @@ ul, ol { list-style: none; }
   text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
 }
 .hero-title .accent {
-  background: linear-gradient(100deg, #0a5cff 0%, #2e9bff 46%, #63dbff 100%);
-  background-size: 200% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  filter: drop-shadow(0 3px 14px rgba(8, 46, 110, 0.42));
-  animation: accentShift 8s ease-in-out infinite alternate;
+  position: relative;
+  display: inline-block;
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
 }
-@keyframes accentShift {
-  from { background-position: 0% 50%; }
-  to { background-position: 100% 50%; }
+.hero-title .accent::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -0.08em;
+  height: 6px;
+  border-radius: 4px;
+  background: linear-gradient(100deg, #2e9bff 0%, #63dbff 100%);
+  box-shadow: 0 3px 12px rgba(8, 46, 110, 0.45);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: accentUnderline 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+@keyframes accentUnderline {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-title .accent { animation: none; }
+  .hero-title .accent::after { animation: none; transform: scaleX(1); }
 }
 .hero .hero-lead {
   color: rgba(255, 255, 255, 0.96);
