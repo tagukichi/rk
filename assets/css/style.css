@@ -160,6 +160,7 @@ ul, ol { list-style: none; }
   object-fit: cover;
   object-position: center bottom;
   display: block;
+  filter: brightness(1.08) saturate(1.06);
   animation: heroZoom 18s ease-out both;
 }
 @keyframes heroZoom {
@@ -172,8 +173,8 @@ ul, ol { list-style: none; }
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(15, 28, 46, 0.82) 0%, rgba(15, 28, 46, 0.55) 36%, rgba(15, 28, 46, 0.08) 68%, rgba(15, 28, 46, 0) 100%),
-    linear-gradient(0deg, rgba(15, 28, 46, 0.45) 0%, rgba(15, 28, 46, 0) 30%);
+    linear-gradient(90deg, rgba(13, 42, 74, 0.58) 0%, rgba(13, 42, 74, 0.34) 36%, rgba(13, 42, 74, 0.04) 66%, rgba(13, 42, 74, 0) 100%),
+    linear-gradient(0deg, rgba(13, 42, 74, 0.28) 0%, rgba(13, 42, 74, 0) 28%);
 }
 .hero-accent-orb { display: none; }
 .hero-inner { position: relative; z-index: 2; }
@@ -192,7 +193,10 @@ ul, ol { list-style: none; }
   from { transform: scaleX(0); }
   to { transform: scaleX(1); }
 }
-.hero .hero-title { color: #ffffff; }
+.hero .hero-title {
+  color: #ffffff;
+  text-shadow: 0 2px 28px rgba(13, 42, 74, 0.45);
+}
 .hero-title .accent {
   background: linear-gradient(92deg, #4da3ff 0%, #7fe3ff 100%);
   -webkit-background-clip: text;
@@ -200,7 +204,10 @@ ul, ol { list-style: none; }
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
-.hero .hero-lead { color: rgba(255, 255, 255, 0.88); }
+.hero .hero-lead {
+  color: rgba(255, 255, 255, 0.94);
+  text-shadow: 0 1px 18px rgba(13, 42, 74, 0.5);
+}
 .hero .btn-outline {
   color: #fff;
   border-color: rgba(255, 255, 255, 0.75);
@@ -823,7 +830,7 @@ select.form-control { appearance: none; cursor: pointer; }
   /* モバイルは縦長になるため全面をやや強めにオーバーレイ */
   .hero-grid-bg {
     background:
-      linear-gradient(180deg, rgba(15, 28, 46, 0.72) 0%, rgba(15, 28, 46, 0.55) 55%, rgba(15, 28, 46, 0.35) 100%);
+      linear-gradient(180deg, rgba(13, 42, 74, 0.55) 0%, rgba(13, 42, 74, 0.4) 55%, rgba(13, 42, 74, 0.25) 100%);
   }
   .company-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
   .company-table td { display: block; padding-top: 0; }
