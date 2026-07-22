@@ -177,7 +177,19 @@ ul, ol { list-style: none; }
     linear-gradient(0deg, rgba(13, 42, 74, 0.20) 0%, rgba(13, 42, 74, 0) 26%);
 }
 .hero-accent-orb { display: none; }
-.hero-inner { position: relative; z-index: 2; }
+/* コンテンツを左に寄せる（中央寄せコンテナを解除） */
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: none;
+  width: 100%;
+  margin: 0;
+  padding-left: clamp(24px, 8vw, 150px);
+  padding-right: 24px;
+  text-align: left;
+}
+.hero-inner > * { max-width: 640px; margin-left: 0; margin-right: 0; }
+.hero-actions { justify-content: flex-start; }
 .hero .hero-label { color: #7fd4ff; }
 .hero .hero-label::after {
   content: "";
@@ -198,11 +210,21 @@ ul, ol { list-style: none; }
   text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
 }
 .hero-title .accent {
-  background: linear-gradient(92deg, #4da3ff 0%, #7fe3ff 100%);
+  background: linear-gradient(100deg, #0a5cff 0%, #2e9bff 46%, #63dbff 100%);
+  background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+  filter: drop-shadow(0 3px 14px rgba(8, 46, 110, 0.42));
+  animation: accentShift 8s ease-in-out infinite alternate;
+}
+@keyframes accentShift {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-title .accent { animation: none; }
 }
 .hero .hero-lead {
   color: rgba(255, 255, 255, 0.96);
@@ -827,10 +849,11 @@ select.form-control { appearance: none; cursor: pointer; }
 
   .service-grid, .works-grid { grid-template-columns: 1fr; }
   .hero { min-height: 78vh; }
+  .hero-inner { padding-left: 5%; padding-right: 5%; }
   /* モバイルは縦長になるため全面をやや強めにオーバーレイ */
   .hero-grid-bg {
     background:
-      linear-gradient(180deg, rgba(13, 42, 74, 0.55) 0%, rgba(13, 42, 74, 0.4) 55%, rgba(13, 42, 74, 0.25) 100%);
+      linear-gradient(180deg, rgba(13, 42, 74, 0.5) 0%, rgba(13, 42, 74, 0.36) 55%, rgba(13, 42, 74, 0.22) 100%);
   }
   .company-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
   .company-table td { display: block; padding-top: 0; }
