@@ -817,6 +817,13 @@ select.form-control { appearance: none; cursor: pointer; }
 
 @media (max-width: 720px) {
   .nav-toggle { display: block; }
+  /* backdrop-filter は fixed 子要素の包含ブロックを作ってしまい、
+     全画面メニューがヘッダー内に閉じ込められるため無効化する */
+  .site-header {
+    background: #ffffff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
   .global-nav {
     position: fixed;
     inset: 0;
