@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="中古マンションの売却">
+  <!-- 空 -->
+  <rect width="800" height="500" fill="#cfe6fb"/>
+  <rect width="800" height="500" fill="url(#sky)"/>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#8cc3f5"/>
+      <stop offset="1" stop-color="#e3f1fd"/>
+    </linearGradient>
+  </defs>
+  <!-- 太陽 -->
+  <circle cx="660" cy="90" r="38" fill="#fff3c9" opacity="0.9"/>
+  <!-- 奥のビル群 -->
+  <g fill="#b9d4ec">
+    <rect x="40" y="200" width="70" height="220"/>
+    <rect x="620" y="180" width="60" height="240"/>
+    <rect x="700" y="230" width="80" height="190"/>
+  </g>
+  <!-- メインのマンション -->
+  <g>
+    <rect x="300" y="110" width="200" height="310" fill="#f4f0e6"/>
+    <rect x="300" y="110" width="200" height="14" fill="#e0d9c8"/>
+    <!-- バルコニーと窓 -->
+    <g fill="#9ec9ee">
+      <rect x="318" y="140" width="46" height="34"/>
+      <rect x="378" y="140" width="46" height="34"/>
+      <rect x="438" y="140" width="46" height="34"/>
+      <rect x="318" y="196" width="46" height="34"/>
+      <rect x="378" y="196" width="46" height="34"/>
+      <rect x="438" y="196" width="46" height="34"/>
+      <rect x="318" y="252" width="46" height="34"/>
+      <rect x="378" y="252" width="46" height="34"/>
+      <rect x="438" y="252" width="46" height="34"/>
+      <rect x="318" y="308" width="46" height="34"/>
+      <rect x="378" y="308" width="46" height="34"/>
+      <rect x="438" y="308" width="46" height="34"/>
+    </g>
+    <g fill="#ffffff" opacity="0.8">
+      <rect x="318" y="166" width="46" height="8"/>
+      <rect x="378" y="166" width="46" height="8"/>
+      <rect x="438" y="166" width="46" height="8"/>
+      <rect x="318" y="222" width="46" height="8"/>
+      <rect x="378" y="222" width="46" height="8"/>
+      <rect x="438" y="222" width="46" height="8"/>
+      <rect x="318" y="278" width="46" height="8"/>
+      <rect x="378" y="278" width="46" height="8"/>
+      <rect x="438" y="278" width="46" height="8"/>
+      <rect x="318" y="334" width="46" height="8"/>
+      <rect x="378" y="334" width="46" height="8"/>
+      <rect x="438" y="334" width="46" height="8"/>
+    </g>
+    <!-- エントランス -->
+    <rect x="372" y="372" width="56" height="48" fill="#1b3a5c"/>
+    <rect x="392" y="372" width="4" height="48" fill="#cfe6fb"/>
+  </g>
+  <!-- 隣の低層ビル -->
+  <g>
+    <rect x="540" y="260" width="120" height="160" fill="#dde8f2"/>
+    <g fill="#9ec9ee">
+      <rect x="556" y="280" width="26" height="22"/>
+      <rect x="596" y="280" width="26" height="22"/>
+      <rect x="556" y="318" width="26" height="22"/>
+      <rect x="596" y="318" width="26" height="22"/>
+      <rect x="556" y="356" width="26" height="22"/>
+      <rect x="596" y="356" width="26" height="22"/>
+    </g>
+  </g>
+  <g>
+    <rect x="140" y="290" width="130" height="130" fill="#e8e2d4"/>
+    <g fill="#9ec9ee">
+      <rect x="156" y="308" width="28" height="24"/>
+      <rect x="200" y="308" width="28" height="24"/>
+      <rect x="156" y="348" width="28" height="24"/>
+      <rect x="200" y="348" width="28" height="24"/>
+    </g>
+  </g>
+  <!-- SOLD サイン -->
+  <g>
+    <rect x="478" y="330" width="132" height="58" rx="8" fill="#0e6fff"/>
+    <text x="544" y="368" font-family="Arial, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle" letter-spacing="3">SOLD</text>
+    <rect x="538" y="388" width="12" height="32" fill="#1b3a5c"/>
+  </g>
+  <!-- 地面 -->
+  <rect x="0" y="420" width="800" height="80" fill="#dcecdc"/>
+  <!-- 樹木 -->
+  <g>
+    <rect x="86" y="392" width="10" height="34" fill="#b58e5f"/>
+    <circle cx="91" cy="376" r="30" fill="#a8d8a0"/>
+    <rect x="714" y="396" width="10" height="30" fill="#b58e5f"/>
+    <circle cx="719" cy="382" r="26" fill="#98cf90"/>
+    <rect x="270" y="400" width="8" height="26" fill="#b58e5f"/>
+    <circle cx="274" cy="388" r="22" fill="#a8d8a0"/>
+  </g>
+</svg>
