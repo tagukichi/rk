@@ -145,7 +145,7 @@ ul, ol { list-style: none; }
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: #0f1c2e;
+  background: #dbe9f7;
 }
 /* 都市写真（メインビジュアル背景・全面） */
 .hero-skyline {
@@ -160,21 +160,20 @@ ul, ol { list-style: none; }
   object-fit: cover;
   object-position: center bottom;
   display: block;
-  filter: brightness(1.08) saturate(1.06);
+  filter: saturate(1.04);
   animation: heroZoom 18s ease-out both;
 }
 @keyframes heroZoom {
   from { transform: scale(1.08); }
   to { transform: scale(1); }
 }
-/* テキスト可読性のための濃紺オーバーレイ（左→右） */
+/* 明るい写真に合わせた白ベール（左→右）。濃色テキストの可読性を確保 */
 .hero-grid-bg {
   position: absolute;
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(13, 42, 74, 0.34) 0%, rgba(13, 42, 74, 0.18) 40%, rgba(13, 42, 74, 0.02) 70%, rgba(13, 42, 74, 0) 100%),
-    linear-gradient(0deg, rgba(13, 42, 74, 0.20) 0%, rgba(13, 42, 74, 0) 26%);
+    linear-gradient(90deg, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.5) 42%, rgba(255, 255, 255, 0.12) 72%, rgba(255, 255, 255, 0) 100%);
 }
 .hero-accent-orb { display: none; }
 /* コンテンツを左に寄せる（中央寄せコンテナを解除） */
@@ -190,7 +189,7 @@ ul, ol { list-style: none; }
 }
 .hero-inner > * { max-width: 640px; margin-left: 0; margin-right: 0; }
 .hero-actions { justify-content: flex-start; }
-.hero .hero-label { color: #7fd4ff; }
+.hero .hero-label { color: var(--color-accent); }
 .hero .hero-label::after {
   content: "";
   display: block;
@@ -206,26 +205,26 @@ ul, ol { list-style: none; }
   to { transform: scaleX(1); }
 }
 .hero .hero-title {
-  color: #ffffff;
-  text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
+  color: var(--color-ink);
+  text-shadow: 0 1px 16px rgba(255, 255, 255, 0.7);
 }
 .hero-title .accent {
-  color: #ffffff;
-  -webkit-text-fill-color: #ffffff;
-  text-shadow: 0 2px 18px rgba(13, 42, 74, 0.6), 0 1px 3px rgba(13, 42, 74, 0.5);
+  color: var(--color-accent-dark);
+  -webkit-text-fill-color: var(--color-accent-dark);
+  text-shadow: 0 1px 16px rgba(255, 255, 255, 0.7);
 }
 .hero .hero-lead {
-  color: rgba(255, 255, 255, 0.96);
-  text-shadow: 0 1px 12px rgba(13, 42, 74, 0.65), 0 1px 2px rgba(13, 42, 74, 0.5);
+  color: #34465c;
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.8);
 }
 .hero .btn-outline {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.75);
+  color: var(--color-ink);
+  border-color: rgba(15, 28, 46, 0.55);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.45);
 }
-.hero .btn-outline:hover { background: #fff; color: var(--color-ink); border-color: #fff; }
+.hero .btn-outline:hover { background: var(--color-ink); color: #fff; border-color: var(--color-ink); }
 .hero-label {
   font-family: var(--font-en);
   font-size: 13px;
@@ -864,10 +863,10 @@ select.form-control { appearance: none; cursor: pointer; }
   .service-grid, .works-grid { grid-template-columns: 1fr; }
   .hero { min-height: 78vh; padding-top: calc(var(--header-h) + 40px); padding-bottom: 48px; }
   .hero-inner { padding-left: 5%; padding-right: 5%; }
-  /* モバイルは縦長になるため全面をやや強めにオーバーレイ */
+  /* モバイルは縦長になるため上部を強めに白ベール */
   .hero-grid-bg {
     background:
-      linear-gradient(180deg, rgba(13, 42, 74, 0.5) 0%, rgba(13, 42, 74, 0.36) 55%, rgba(13, 42, 74, 0.22) 100%);
+      linear-gradient(180deg, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.6) 55%, rgba(255, 255, 255, 0.25) 100%);
   }
   .company-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
   .company-table td { display: block; padding-top: 0; }
