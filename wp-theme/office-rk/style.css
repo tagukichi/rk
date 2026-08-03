@@ -1,0 +1,18 @@
+/*
+Theme Name:   Office RK
+Theme URI:    https://tagukichi.github.io/rk/
+Author:       DesignForge
+Description:  株式会社オフィスＲＫ コーポレートサイト用のオリジナルテーマ。1ページ完結型で、全テキスト・画像を「外観 > カスタマイズ」から編集できます。追加プラグインは不要です。
+Version:      1.0.0
+Requires at least: 6.0
+Requires PHP: 8.0
+License:      GPL v2 or later
+License URI:  https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain:  office-rk
+Tags:         one-column, custom-menu, custom-logo, translation-ready
+*/
+
+/*
+ * 実際のスタイルは assets/css/style.css に格納しています。
+ * このファイルは WordPress がテーマを認識するためのメタ情報専用です。
+ */

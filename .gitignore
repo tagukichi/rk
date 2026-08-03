@@ -1,0 +1,3 @@
+# WordPress 本体・設定は含めない（テーマ単体で配布するため）
+wp-config.php
+wp-content/uploads/
