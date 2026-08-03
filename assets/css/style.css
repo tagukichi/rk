@@ -249,6 +249,9 @@ ul, ol { list-style: none; }
   margin-bottom: 40px;
 }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+/* リード文が複数段落のときの間隔 */
+.hero-lead { margin-bottom: 16px; }
+.hero-lead:last-of-type { margin-bottom: 40px; }
 
 .hero-scroll {
   position: absolute;
@@ -333,6 +336,17 @@ ul, ol { list-style: none; }
 .section-head.is-center { text-align: center; }
 .section-lead { margin-top: 20px; color: var(--color-ink-sub); max-width: 640px; }
 .section-head.is-center .section-lead { margin-left: auto; margin-right: auto; }
+/* セクション見出し直下のキャッチ文 */
+.section-catch {
+  margin-top: 20px;
+  font-size: clamp(16px, 1.9vw, 19px);
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--color-ink);
+  max-width: 760px;
+}
+.section-head.is-center .section-catch { margin-left: auto; margin-right: auto; }
+.section-catch + .section-lead { margin-top: 16px; }
 
 /* ---------- About preview ---------- */
 .about-grid {
@@ -365,7 +379,7 @@ ul, ol { list-style: none; }
 /* ---------- Services ---------- */
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 .service-card {
@@ -415,6 +429,7 @@ ul, ol { list-style: none; }
   letter-spacing: 0.04em;
 }
 .service-card p { font-size: 14.5px; color: var(--color-ink-sub); }
+.service-card p + p { margin-top: 14px; }
 
 /* ---------- Works ---------- */
 .works-grid {
@@ -485,7 +500,13 @@ ul, ol { list-style: none; }
   margin-bottom: 20px;
   letter-spacing: 0.04em;
 }
-.cta-inner p { color: rgba(255, 255, 255, 0.75); margin-bottom: 40px; }
+.cta-inner > p {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0 auto 16px;
+  max-width: 780px;
+  text-align: left;
+}
+.cta-inner > p:last-of-type { margin-bottom: 40px; }
 .cta-actions { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .cta-contact {
   font-size: 15px;
