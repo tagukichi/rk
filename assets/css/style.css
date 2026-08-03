@@ -245,9 +245,11 @@ ul, ol { list-style: none; }
 .hero-lead {
   font-size: clamp(15px, 1.6vw, 17px);
   color: var(--color-ink-sub);
-  max-width: 560px;
+  max-width: 820px;
   margin-bottom: 40px;
 }
+/* PCのみ有効な改行（スマホでは無効化） */
+.br-pc { display: inline; }
 .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
 /* リード文が複数段落のときの間隔 */
 .hero-lead { margin-bottom: 16px; }
@@ -343,7 +345,7 @@ ul, ol { list-style: none; }
   font-weight: 700;
   line-height: 1.7;
   color: var(--color-ink);
-  max-width: 760px;
+  max-width: 920px;
 }
 .section-head.is-center .section-catch { margin-left: auto; margin-right: auto; }
 .section-catch + .section-lead { margin-top: 16px; }
@@ -540,13 +542,17 @@ ul, ol { list-style: none; }
   color: #fff;
   padding: 72px 0 32px;
 }
+/* フッターは中央寄せ（ロゴ1行 → 住所2行 → 連絡先1行 → ナビ） */
 .footer-grid {
   display: flex;
-  justify-content: space-between;
-  gap: 48px;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
   margin-bottom: 56px;
+  text-align: center;
 }
+.footer-brand { text-align: center; }
+.footer-brand .site-logo { justify-content: center; }
 .footer-brand .site-logo .logo-text { color: #fff; }
 .footer-brand address {
   font-style: normal;
@@ -560,7 +566,7 @@ ul, ol { list-style: none; }
   transition: color 0.25s;
 }
 .footer-brand address a:hover { color: var(--color-accent); }
-.footer-nav { display: flex; gap: 64px; }
+.footer-nav { display: flex; gap: 64px; justify-content: center; }
 .footer-nav-col h4 {
   font-family: var(--font-en);
   font-size: 12px;
@@ -892,4 +898,6 @@ select.form-control { appearance: none; cursor: pointer; }
   .company-table th { width: auto; display: block; padding-bottom: 4px; border-bottom: none; }
   .company-table td { display: block; padding-top: 0; }
   .footer-nav { gap: 40px; }
+  /* PC専用の改行はスマホでは無効化 */
+  .br-pc { display: none; }
 }
