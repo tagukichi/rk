@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OFFICE_RK_VERSION', '1.1.0' );
+define( 'OFFICE_RK_VERSION', '1.1.1' );
 define( 'OFFICE_RK_DIR', get_template_directory() );
 define( 'OFFICE_RK_URI', get_template_directory_uri() );
 

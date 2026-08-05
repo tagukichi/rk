@@ -217,7 +217,8 @@ function office_rk_site_logo( $context = 'header' ) {
 			return;
 		}
 
-		office_rk_text_logo();
+		// フッターは会社名のみ（「RK」マークは表示しない）。
+		office_rk_text_logo( false );
 		return;
 	}
 
@@ -230,12 +231,16 @@ function office_rk_site_logo( $context = 'header' ) {
 }
 
 /**
- * テキストロゴ（RK + 会社名）を出力する。
+ * テキストロゴを出力する。
+ *
+ * @param bool $show_mark 「RK」マークを表示するか（フッターでは非表示）。
  */
-function office_rk_text_logo() {
+function office_rk_text_logo( $show_mark = true ) {
 	?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
-		<span class="logo-mark">RK</span>
+		<?php if ( $show_mark ) : ?>
+			<span class="logo-mark">RK</span>
+		<?php endif; ?>
 		<span class="logo-text"><?php echo esc_html( office_rk_get( 'company_name' ) ); ?></span>
 	</a>
 	<?php
