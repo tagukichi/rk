@@ -940,7 +940,8 @@ select.form-control { appearance: none; cursor: pointer; }
 /* カスタムロゴ */
 .custom-logo-link { display: inline-flex; align-items: center; }
 .custom-logo { max-height: 40px; width: auto; }
-.site-footer .custom-logo { filter: brightness(0) invert(1); }
+/* フッター用ロゴ画像（未設定時はテキストロゴを表示） */
+.footer-logo-image { max-height: 44px; width: auto; }
 
 /* 固定ページ本文（エディタ出力） */
 .entry-content { max-width: 800px; margin: 0 auto; }

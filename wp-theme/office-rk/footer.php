@@ -19,7 +19,7 @@ $office_rk_footer_email = office_rk_get( 'footer_email' );
 	<div class="container">
 		<div class="footer-grid">
 			<div class="footer-brand">
-				<?php office_rk_site_logo(); ?>
+				<?php office_rk_site_logo( 'footer' ); ?>
 				<address>
 					<?php office_rk_the( 'footer_address_1' ); ?><br>
 					<?php office_rk_the( 'footer_address_2' ); ?><br>

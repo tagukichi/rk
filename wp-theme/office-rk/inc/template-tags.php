@@ -34,12 +34,23 @@ function office_rk_defaults() {
 }
 
 /**
- * カスタマイザーの値を取得する（未設定なら初期値）。
+ * 表示する値を取得する。
+ *
+ * 優先順位:
+ *   1. ACF（固定ページ「フロントページ」のカスタムフィールド）
+ *   2. カスタマイザー（外観 > カスタマイズ）
+ *   3. テーマ初期値
  *
  * @param string $key 項目キー。
  * @return string
  */
 function office_rk_get( $key ) {
+	$acf_value = office_rk_acf_value( $key );
+
+	if ( null !== $acf_value ) {
+		return $acf_value;
+	}
+
 	$defaults = office_rk_defaults();
 	$default  = $defaults[ $key ] ?? '';
 
@@ -184,13 +195,44 @@ function office_rk_footer_nav() {
 }
 
 /**
- * サイトロゴ（カスタムロゴ or テキスト）を出力する。
+ * サイトロゴを出力する。
+ *
+ * ヘッダー：カスタムロゴ（未設定時はテキストロゴ）
+ * フッター：フッター専用ロゴ（未設定時はテキストロゴ）
+ *   ※フッターは背景が濃紺のため、白抜き加工はせず専用画像で差し替える方式にしている。
+ *
+ * @param string $context 'header' または 'footer'。
  */
-function office_rk_site_logo() {
+function office_rk_site_logo( $context = 'header' ) {
+	if ( 'footer' === $context ) {
+		$footer_logo = office_rk_get( 'footer_logo' );
+
+		if ( $footer_logo ) {
+			printf(
+				'<a href="%1$s" class="site-logo"><img src="%2$s" alt="%3$s" class="footer-logo-image" loading="lazy" decoding="async"></a>',
+				esc_url( home_url( '/' ) ),
+				esc_url( $footer_logo ),
+				esc_attr( office_rk_get( 'company_name' ) )
+			);
+			return;
+		}
+
+		office_rk_text_logo();
+		return;
+	}
+
 	if ( has_custom_logo() ) {
 		the_custom_logo();
 		return;
 	}
+
+	office_rk_text_logo();
+}
+
+/**
+ * テキストロゴ（RK + 会社名）を出力する。
+ */
+function office_rk_text_logo() {
 	?>
 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
 		<span class="logo-mark">RK</span>

@@ -76,12 +76,12 @@ function office_rk_customizer_map() {
 				'works_1_tag'   => [ 'label' => __( '01 ラベル', 'office-rk' ), 'type' => 'text', 'default' => '土地売買仲介' ],
 				'works_1_title' => [ 'label' => __( '01 見出し', 'office-rk' ), 'type' => 'text', 'default' => '土地・戸建・区分マンションの売却サポート' ],
 				'works_1_text'  => [ 'label' => __( '01 本文', 'office-rk' ), 'type' => 'textarea', 'default' => '市場動向や物件の特性を踏まえた査定・販売戦略の立案から、購入希望者との条件調整、契約まで一貫してサポートいたします。' ],
-				'works_1_image' => [ 'label' => __( '01 画像', 'office-rk' ), 'type' => 'image', 'default' => 'service1.jpg' ],
+				'works_1_image' => [ 'label' => __( '01 画像', 'office-rk' ), 'type' => 'image', 'default' => 'service2.jpg' ],
 
 				'works_2_tag'   => [ 'label' => __( '02 ラベル', 'office-rk' ), 'type' => 'text', 'default' => '収益・事業用不動産' ],
 				'works_2_title' => [ 'label' => __( '02 見出し', 'office-rk' ), 'type' => 'text', 'default' => '一棟収益物件・事業用不動産の売買サポート' ],
 				'works_2_text'  => [ 'label' => __( '02 本文', 'office-rk' ), 'type' => 'textarea', 'default' => '投資目的や収益性、将来的な資産価値を考慮し、買主様・売主様双方の条件を調整しながら、円滑な取引をサポートしました。' ],
-				'works_2_image' => [ 'label' => __( '02 画像', 'office-rk' ), 'type' => 'image', 'default' => 'service2.jpg' ],
+				'works_2_image' => [ 'label' => __( '02 画像', 'office-rk' ), 'type' => 'image', 'default' => 'service1.jpg' ],
 
 				'works_3_tag'   => [ 'label' => __( '03 ラベル', 'office-rk' ), 'type' => 'text', 'default' => '不動産コンサルティング' ],
 				'works_3_title' => [ 'label' => __( '03 見出し', 'office-rk' ), 'type' => 'text', 'default' => '相続・資産整理に伴う不動産活用相談' ],
@@ -116,6 +116,7 @@ function office_rk_customizer_map() {
 		'footer'  => [
 			'title'  => __( '⑦ フッター', 'office-rk' ),
 			'fields' => [
+				'footer_logo'      => [ 'label' => __( 'フッター用ロゴ（濃紺背景に映える画像／未設定ならテキストロゴ）', 'office-rk' ), 'type' => 'image', 'default' => '' ],
 				'footer_address_1' => [ 'label' => __( '住所1行目', 'office-rk' ), 'type' => 'text', 'default' => '〒116-0013　東京都荒川区西日暮里4丁目1-20' ],
 				'footer_address_2' => [ 'label' => __( '住所2行目', 'office-rk' ), 'type' => 'text', 'default' => '西日暮里エーシービル106F' ],
 				'footer_tel'       => [ 'label' => __( '電話番号', 'office-rk' ), 'type' => 'tel', 'default' => '03-6820-7697' ],
@@ -133,11 +134,18 @@ function office_rk_customizer_map() {
 add_action(
 	'customize_register',
 	function ( $wp_customize ) {
+		$description = __( 'トップページに表示されるテキストと画像を編集できます。', 'office-rk' );
+
+		if ( function_exists( 'get_field' ) ) {
+			$description .= '<br><strong>' . esc_html__( 'ACF が有効です。', 'office-rk' ) . '</strong>'
+				. esc_html__( '「固定ページ」でフロントページを編集した内容が優先されます。こちらは未入力項目の予備として機能します。', 'office-rk' );
+		}
+
 		$wp_customize->add_panel(
 			'office_rk_panel',
 			[
 				'title'       => __( 'サイトの内容', 'office-rk' ),
-				'description' => __( 'トップページに表示されるテキストと画像を編集できます。', 'office-rk' ),
+				'description' => $description,
 				'priority'    => 20,
 			]
 		);
