@@ -204,43 +204,37 @@ function office_rk_footer_nav() {
  * @param string $context 'header' または 'footer'。
  */
 function office_rk_site_logo( $context = 'header' ) {
+	$logo_id  = 0;
+	$logo_url = '';
+
 	if ( 'footer' === $context ) {
-		$footer_logo = office_rk_get( 'footer_logo' );
-
-		if ( $footer_logo ) {
-			printf(
-				'<a href="%1$s" class="site-logo"><img src="%2$s" alt="%3$s" class="footer-logo-image" loading="lazy" decoding="async"></a>',
-				esc_url( home_url( '/' ) ),
-				esc_url( $footer_logo ),
-				esc_attr( office_rk_get( 'company_name' ) )
-			);
-			return;
-		}
-
-		// フッターは会社名のみ（「RK」マークは表示しない）。
-		office_rk_text_logo( false );
-		return;
+		$logo_url = office_rk_get( 'footer_logo' );
+	} elseif ( has_custom_logo() ) {
+		$logo_id = (int) get_theme_mod( 'custom_logo' );
 	}
 
-	if ( has_custom_logo() ) {
-		the_custom_logo();
-		return;
-	}
-
-	office_rk_text_logo();
-}
-
-/**
- * テキストロゴを出力する。
- *
- * @param bool $show_mark 「RK」マークを表示するか（フッターでは非表示）。
- */
-function office_rk_text_logo( $show_mark = true ) {
+	$has_image = ( $logo_id || $logo_url );
 	?>
-	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo">
-		<?php if ( $show_mark ) : ?>
+	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="site-logo<?php echo $has_image ? ' site-logo--image' : ''; ?>">
+		<?php if ( $logo_id ) : ?>
+			<?php
+			// ロゴ画像の隣に会社名を併記するため、alt は空にして読み上げの重複を避ける。
+			echo wp_get_attachment_image(
+				$logo_id,
+				'full',
+				false,
+				[
+					'class' => 'site-logo-image',
+					'alt'   => '',
+				]
+			);
+			?>
+		<?php elseif ( $logo_url ) : ?>
+			<img src="<?php echo esc_url( $logo_url ); ?>" alt="" class="site-logo-image" loading="lazy" decoding="async">
+		<?php elseif ( 'footer' !== $context ) : ?>
 			<span class="logo-mark">RK</span>
 		<?php endif; ?>
+
 		<span class="logo-text"><?php echo esc_html( office_rk_get( 'company_name' ) ); ?></span>
 	</a>
 	<?php

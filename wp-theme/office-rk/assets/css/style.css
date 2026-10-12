@@ -938,10 +938,17 @@ select.form-control { appearance: none; cursor: pointer; }
 }
 
 /* カスタムロゴ */
-.custom-logo-link { display: inline-flex; align-items: center; }
-.custom-logo { max-height: 40px; width: auto; }
-/* フッター用ロゴ画像（未設定時はテキストロゴを表示） */
-.footer-logo-image { max-height: 44px; width: auto; }
+/* ロゴ画像 ＋ 会社名の並び（画像なしの場合は「RK」マーク ＋ 会社名） */
+.site-logo--image { align-items: center; }
+.site-logo-image {
+  max-height: 40px;
+  width: auto;
+  display: block;
+}
+.site-footer .site-logo-image { max-height: 48px; }
+@media (max-width: 720px) {
+  .site-logo-image { max-height: 32px; }
+}
 
 /* 固定ページ本文（エディタ出力） */
 .entry-content { max-width: 800px; margin: 0 auto; }
