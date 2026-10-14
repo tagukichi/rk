@@ -33,7 +33,7 @@ $office_rk_tel   = office_rk_get( 'contact_tel' );
 
 			<?php if ( $office_rk_tel ) : ?>
 				<p class="cta-tel">
-					<?php esc_html_e( 'お電話でのお問い合わせ', 'office-rk' ); ?>&#12288;<a href="<?php echo esc_attr( office_rk_tel_href( $office_rk_tel ) ); ?>"><strong><?php echo esc_html( $office_rk_tel ); ?></strong></a><?php office_rk_the( 'contact_hours' ); ?>
+					<?php esc_html_e( 'お電話でのお問い合わせ', 'office-rk' ); ?>&#12288;<a href="<?php echo esc_attr( office_rk_tel_href( $office_rk_tel ) ); ?>" class="nowrap"><strong><?php echo esc_html( $office_rk_tel ); ?></strong></a><?php if ( office_rk_has( 'contact_hours' ) ) : ?><span class="nowrap"><?php office_rk_the( 'contact_hours' ); ?></span><?php endif; ?>
 				</p>
 			<?php endif; ?>
 		</div>

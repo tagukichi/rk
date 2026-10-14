@@ -23,14 +23,15 @@ $office_rk_footer_email = office_rk_get( 'footer_email' );
 				<address>
 					<?php office_rk_the( 'footer_address_1' ); ?><br>
 					<?php office_rk_the( 'footer_address_2' ); ?><br>
+					<?php // TEL / FAX / MAIL は項目単位で折り返す（項目の途中では改行しない）。 ?>
 					<?php if ( $office_rk_footer_tel ) : ?>
-						TEL: <?php echo esc_html( $office_rk_footer_tel ); ?>
+						<span class="contact-item">TEL: <?php echo esc_html( $office_rk_footer_tel ); ?></span>
 					<?php endif; ?>
 					<?php if ( $office_rk_footer_fax ) : ?>
-						&#12288;FAX: <?php echo esc_html( $office_rk_footer_fax ); ?>
+						<span class="contact-item">FAX: <?php echo esc_html( $office_rk_footer_fax ); ?></span>
 					<?php endif; ?>
 					<?php if ( $office_rk_footer_email ) : ?>
-						&#12288;MAIL: <a href="mailto:<?php echo esc_attr( $office_rk_footer_email ); ?>"><?php echo esc_html( $office_rk_footer_email ); ?></a>
+						<span class="contact-item">MAIL: <a href="mailto:<?php echo esc_attr( $office_rk_footer_email ); ?>"><?php echo esc_html( $office_rk_footer_email ); ?></a></span>
 					<?php endif; ?>
 				</address>
 			</div>

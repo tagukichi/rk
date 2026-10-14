@@ -110,7 +110,7 @@ function office_rk_customizer_map() {
 				'contact_text_3'  => [ 'label' => __( '本文3段落目', 'office-rk' ), 'type' => 'textarea', 'default' => '不動産会社様からの共同仲介・物件情報に関するお問い合わせも歓迎しております。' ],
 				'contact_email'   => [ 'label' => __( 'メールアドレス', 'office-rk' ), 'type' => 'email', 'default' => 'info@office-rk.jp' ],
 				'contact_tel'     => [ 'label' => __( '電話番号', 'office-rk' ), 'type' => 'tel', 'default' => '03-6820-7697' ],
-				'contact_hours'   => [ 'label' => __( '受付時間の注記', 'office-rk' ), 'type' => 'text', 'default' => '（平日 10:00〜18:00）' ],
+				'contact_hours'   => [ 'label' => __( '受付時間の注記', 'office-rk' ), 'type' => 'text', 'default' => '（平日10:00〜18:00）' ],
 			],
 		],
 		'footer'  => [

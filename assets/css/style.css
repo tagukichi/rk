@@ -901,3 +901,13 @@ select.form-control { appearance: none; cursor: pointer; }
   /* PC専用の改行はスマホでは無効化 */
   .br-pc { display: none; }
 }
+
+/* ---------- 折り返し制御（途中で改行させない単位） ---------- */
+/* 受付時間・電話番号は1かたまりで、入りきらなければまるごと次の行へ */
+.nowrap { white-space: nowrap; }
+/* フッターの TEL / FAX / MAIL は項目ごとに折り返す（中央寄せを崩さないよう左右対称の余白） */
+.contact-item {
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0 0.6em;
+}
